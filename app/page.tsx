@@ -1,4 +1,3 @@
-```tsx
 'use client';
 import { useState, useEffect } from 'react';
 const WALLET = '0xba24d47e65982b1378c426e658869cfe41f3f4e1';
@@ -58,4 +57,4 @@ export default function TheWall() {
     </div>
   );
 }
-```
+
