@@ -41,11 +41,16 @@ export default function TheWall() {
 
   const fetchBalance = async (ethPrice: number) => {
     try {
-      const res = await fetch('https://eth.llamarpc.com', {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({jsonrpc:'2.0',method:'eth_getBalance',params:[WALLET,'latest'],id:1})
-      });
+      const res = await fetch('https://cloudflare-eth.com', {
+  method:'POST',
+  headers:{'Content-Type':'application/json'},
+  body:JSON.stringify({
+    jsonrpc:'2.0',
+    method:'eth_getBalance',
+    params:[WALLET,'latest'],
+    id:1
+  })
+});
       const d = await res.json();
       const bal = (parseInt(d.result,16)/1e18).toFixed(4);
       setBalance(bal);
